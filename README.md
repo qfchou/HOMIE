@@ -28,3 +28,18 @@ emb = enc.encode([{"image": "slide.jpg"}])     # torch.Tensor, (1, 2048), L2-nor
 {"video": "case.mp4"}                                 # video
 {"video": "case.mp4", "text": "best diagnosis?"}      # video + text
 ```
+
+## Composed retrieval tasks
+
+Data released at 🤗 [`qfchou/HOMIE-PCR`](https://huggingface.co/datasets/qfchou/HOMIE-PCR):
+| file | task | n | built from |
+|---|---|---|---|
+| `multi_image_to_text.json` | (qi,qi,…) → ct | 600 | ARCH Bookset captions, regrouped |
+| `image_text_to_image.json` | (qi,qt) → ci | 488 | ARCH Bookset, relational clauses parsed out by GPT-5 |
+
+Annotations only — the images are not redistributed. Download `book_set.zip` from ARCH (https://warwick.ac.uk/fac/cross_fac/tia/data/arch),
+then run just these two tasks with:
+
+```bash
+ARCH_IMAGES=/path/to/book_set/images bash run_pcr.sh
+```
