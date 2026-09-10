@@ -1,4 +1,5 @@
 # HOMIE - Histopathology Multi-modal Embedding for Pathology Composed Retrieval (ECCV26)
+🤗 [Models & data](https://huggingface.co/collections/qfchou/homie)
 ## Install
 
 ```bash
